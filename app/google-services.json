@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1006928355869",
+    "project_id": "note-taker-b768d",
+    "storage_bucket": "note-taker-b768d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1006928355869:android:6c3c27940f5e4b69f39cf4",
+        "android_client_info": {
+          "package_name": "com.rawan.notetaker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1006928355869-8rr3c5huk6ov9qjouovulf3bf5etfqs3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxZYRc_2UTpW_D6XiP2CS7gE3L9ryPVg0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1006928355869-8rr3c5huk6ov9qjouovulf3bf5etfqs3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
