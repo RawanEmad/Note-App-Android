@@ -27,7 +27,8 @@ class MainActivity : AppCompatActivity() {
             val providers = arrayListOf(
                 AuthUI.IdpConfig.EmailBuilder().build(),
                 AuthUI.IdpConfig.GoogleBuilder().build(),
-                AuthUI.IdpConfig.FacebookBuilder().build()
+                AuthUI.IdpConfig.FacebookBuilder().build(),
+                AuthUI.IdpConfig.PhoneBuilder().setDefaultCountryIso("EG").build()
             )
 
             startActivityForResult(AuthUI.getInstance()
