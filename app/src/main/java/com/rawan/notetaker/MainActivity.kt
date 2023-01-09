@@ -25,12 +25,14 @@ class MainActivity : AppCompatActivity() {
         binding.btnSignIn.setOnClickListener {
 
             val providers = arrayListOf(
-                AuthUI.IdpConfig.EmailBuilder().build()
+                AuthUI.IdpConfig.EmailBuilder().build(),
+                AuthUI.IdpConfig.GoogleBuilder().build()
             )
 
             startActivityForResult(AuthUI.getInstance()
                 .createSignInIntentBuilder()
                 .setAvailableProviders(providers)
+                .setIsSmartLockEnabled(!BuildConfig.DEBUG, true)
                 .build(), RC_SIGN_IN)
         }
 
