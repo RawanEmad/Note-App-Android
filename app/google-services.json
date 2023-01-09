@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "1006928355869-qfnqsm3nbe3v7054ia0n56s3fcoedfk4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rawan.notetaker",
+            "certificate_hash": "29b68039a479695a138d7de6abb4e9ec9bbf28c8"
+          }
+        },
+        {
           "client_id": "1006928355869-8rr3c5huk6ov9qjouovulf3bf5etfqs3.apps.googleusercontent.com",
           "client_type": 3
         }

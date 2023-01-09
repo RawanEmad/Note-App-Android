@@ -9,4 +9,7 @@
     <string name="not_saved">Note not saved!</string>
     <string name="action_sync">Sync</string>
     <string name="sign_in">Sign-in</string>
+
+    <string name="facebook_application_id" translatable="false">900878527758989</string>
+    <string name="facebook_login_protocol_scheme" translatable="false">fb900878527758989</string>
 </resources>
