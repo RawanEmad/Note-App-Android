@@ -13,6 +13,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.firestore.*
 import com.google.firebase.firestore.EventListener
+import com.rawan.notetaker.MainActivity.Companion.USER_ID
 import com.rawan.notetaker.data.Note
 import com.rawan.notetaker.data.NoteViewModel
 import com.rawan.notetaker.databinding.ActivityListBinding
@@ -74,6 +75,13 @@ class ListActivity : AppCompatActivity() {
             val body = data.getStringExtra(NewNoteActivity.NEW_BODY)
 
             val note = Note(id, title!!, body!!, Calendar.getInstance().timeInMillis, false)
+
+            if (data.hasExtra(USER_ID) &&
+                data.getStringExtra(USER_ID) != userId &&
+                data.getStringExtra(USER_ID) != "-1") {
+                userId = data.getStringExtra(USER_ID).toString()
+                loadData()
+            }
 
             if (userId == "-1") {
                 noteViewModel.insert(note)
