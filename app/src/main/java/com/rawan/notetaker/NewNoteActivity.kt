@@ -4,14 +4,11 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
-import androidx.appcompat.app.AppCompatActivity
-import com.google.firebase.auth.FirebaseAuth
 import com.rawan.notetaker.MainActivity.Companion.USER_ID
 import com.rawan.notetaker.databinding.ActivityNewNoteBinding
 
-class NewNoteActivity : AppCompatActivity() {
+class NewNoteActivity : BaseActivity() {
 
-    var userId = "-1"
     private lateinit var binding: ActivityNewNoteBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,13 +18,7 @@ class NewNoteActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        val user = FirebaseAuth.getInstance().currentUser
-
-        if (user == null || user.isAnonymous) {
-            val intent = Intent(this, MainActivity::class.java)
-            intent.putExtra(MainActivity.SIGNIN_MESSAGE, "Sign-in to create new note")
-            startActivityForResult(intent, ATTEMPT_SIGNIN)
-        }
+        signInMessage = "Sign-in to create new note!"
 
         binding.btnSave.setOnClickListener {
             val resultIntent = Intent()
@@ -47,20 +38,8 @@ class NewNoteActivity : AppCompatActivity() {
         }
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        if (requestCode == ATTEMPT_SIGNIN && resultCode == Activity.RESULT_CANCELED) {
-            finish()
-        } else {
-            if (data != null && data.hasExtra(USER_ID)) {
-                userId = data.getStringExtra(USER_ID).toString()
-            }
-            super.onActivityResult(requestCode, resultCode, data)
-        }
-    }
-
     companion object {
         const val NEW_TITLE = "new_title"
         const val NEW_BODY = "new_body"
-        const val ATTEMPT_SIGNIN = 10
     }
 }

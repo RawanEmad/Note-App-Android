@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.*
 import com.google.firebase.firestore.EventListener
 import com.rawan.notetaker.MainActivity.Companion.USER_ID
@@ -40,7 +41,7 @@ class ListActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.toolbar)
 
-        userId = intent.getStringExtra(MainActivity.USER_ID).toString()
+        userId = getUserId()
 
         binding.fab.setOnClickListener {
             val activityIntent = Intent(this, NewNoteActivity::class.java)
@@ -49,6 +50,8 @@ class ListActivity : AppCompatActivity() {
 
         loadData()
     }
+
+    private fun getUserId() = FirebaseAuth.getInstance().currentUser?.uid ?: "-1"
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -61,7 +64,11 @@ class ListActivity : AppCompatActivity() {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         return when (item.itemId) {
-            R.id.action_sync -> true
+            R.id.action_settings -> {
+                val intent = Intent(this, SettingsActivity::class.java)
+                startActivity(intent)
+                return true
+            }
             else -> super.onOptionsItemSelected(item)
         }
     }
@@ -76,10 +83,8 @@ class ListActivity : AppCompatActivity() {
 
             val note = Note(id, title!!, body!!, Calendar.getInstance().timeInMillis, false)
 
-            if (data.hasExtra(USER_ID) &&
-                data.getStringExtra(USER_ID) != userId &&
-                data.getStringExtra(USER_ID) != "-1") {
-                userId = data.getStringExtra(USER_ID).toString()
+            if (userId != getUserId()) {
+                userId = getUserId()
                 loadData()
             }
 

@@ -14,4 +14,9 @@
     <string name="facebook_login_protocol_scheme" translatable="false">fb900878527758989</string>
     <string name="skip">skip</string>
     <string name="sign_in_default_message">Sign-in to get started</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+
+    <string name="name">Name</string>
+    <string name="delete">Delete Account</string>
+    <string name="signout">Sign out</string>
 </resources>
