@@ -176,8 +176,8 @@ class ListActivity : AppCompatActivity() {
 
         note = Note(
             "",
-            "Pluralsight",
-            "This is one of many great Pluralsight courses on Android",
+            "The Sparks Foundation",
+            "Social Media Integration from Web and Mobile Development tasks",
             Calendar.getInstance().timeInMillis - 10000,
             true
         )

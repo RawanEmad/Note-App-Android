@@ -19,4 +19,5 @@
     <string name="name">Name</string>
     <string name="delete">Delete Account</string>
     <string name="signout">Sign out</string>
+    <string name="email">Email</string>
 </resources>

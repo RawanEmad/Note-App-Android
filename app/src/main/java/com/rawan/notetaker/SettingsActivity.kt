@@ -4,8 +4,11 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import com.bumptech.glide.Glide
 import com.firebase.ui.auth.AuthUI
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.firebase.auth.GoogleAuthProvider
+import com.google.firebase.auth.PhoneAuthProvider
 import com.google.firebase.auth.UserProfileChangeRequest
 import com.rawan.notetaker.databinding.ActivitySettingsBinding
 
@@ -58,7 +61,12 @@ class SettingsActivity : BaseActivity(){
 
     override fun onResume() {
         super.onResume()
+        Glide.with(this)
+            .load(user?.photoUrl)
+            .placeholder(R.drawable.ic_baseline_account_circle_24)
+            .into(binding.etImage)
         binding.etName.setText(user?.displayName)
+        binding.etEmail.setText(user?.email)
     }
 
     override fun onPause() {
