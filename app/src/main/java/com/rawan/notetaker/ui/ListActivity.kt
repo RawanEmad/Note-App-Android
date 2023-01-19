@@ -1,4 +1,4 @@
-package com.rawan.notetaker
+package com.rawan.notetaker.ui
 
 import android.app.Activity
 import android.content.Intent
@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.*
 import com.google.firebase.firestore.EventListener
-import com.rawan.notetaker.MainActivity.Companion.USER_ID
+import com.rawan.notetaker.R
 import com.rawan.notetaker.data.Note
 import com.rawan.notetaker.data.NoteViewModel
 import com.rawan.notetaker.databinding.ActivityListBinding
@@ -195,7 +195,7 @@ class ListActivity : AppCompatActivity() {
             })
         } else {
             firestoreNotesListener = firestoreDB.collection(userId)
-                .addSnapshotListener(EventListener<QuerySnapshot> { snapshots, e ->
+                .addSnapshotListener(EventListener { snapshots, e ->
                     if (e != null) {
                         Log.e(TAG, "Failed to listen for new notes", e)
                         return@EventListener

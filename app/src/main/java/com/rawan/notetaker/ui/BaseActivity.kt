@@ -1,4 +1,4 @@
-package com.rawan.notetaker
+package com.rawan.notetaker.ui
 
 import android.app.Activity
 import android.content.Intent

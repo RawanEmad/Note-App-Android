@@ -1,10 +1,10 @@
-package com.rawan.notetaker
+package com.rawan.notetaker.ui
 
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
-import com.rawan.notetaker.MainActivity.Companion.USER_ID
+import com.rawan.notetaker.ui.MainActivity.Companion.USER_ID
 import com.rawan.notetaker.databinding.ActivityNewNoteBinding
 
 class NewNoteActivity : BaseActivity() {

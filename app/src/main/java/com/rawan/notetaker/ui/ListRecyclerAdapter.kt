@@ -1,4 +1,4 @@
-package com.rawan.notetaker
+package com.rawan.notetaker.ui
 
 import android.content.Context
 import android.util.Log
@@ -9,6 +9,7 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
+import com.rawan.notetaker.R
 import com.rawan.notetaker.data.Note
 import java.util.*
 

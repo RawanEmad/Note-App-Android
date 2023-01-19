@@ -1,4 +1,4 @@
-package com.rawan.notetaker
+package com.rawan.notetaker.ui
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,9 +7,8 @@ import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.firebase.ui.auth.AuthUI
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.google.firebase.auth.GoogleAuthProvider
-import com.google.firebase.auth.PhoneAuthProvider
 import com.google.firebase.auth.UserProfileChangeRequest
+import com.rawan.notetaker.R
 import com.rawan.notetaker.databinding.ActivitySettingsBinding
 
 class SettingsActivity : BaseActivity(){
