@@ -1,5 +1,9 @@
 ## Used Technologies
-- ViewModel, Room Database, Firebase Authentication & Firestore. 
+- ViewModel, LiveData.
+- Room for data persistence.
+- Firebase Authentication.
+- Firestore database. 
+- Data binding.
 
 ## Main Features
 
