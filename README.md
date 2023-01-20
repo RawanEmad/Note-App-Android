@@ -1,10 +1,3 @@
-## Used Technologies
-- ViewModel, LiveData.
-- Room for Data Persistence.
-- Firebase Authentication.
-- Firestore Database. 
-- Data Binding.
-
 ## Main Features
 
 - Add & display notes for each user.
@@ -12,6 +5,13 @@
 - Sign out user & delete account.
 
 ---
+
+## Used Technologies
+- ViewModel, LiveData.
+- Room for Data Persistence.
+- Firebase Authentication.
+- Firestore Database. 
+- Data Binding.
 
 ### FirebaseUI Authentication
 - Sign-in using Email/Password.
